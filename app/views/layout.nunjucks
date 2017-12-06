@@ -12,7 +12,16 @@
 <body>
   <!-- Header -->
   <header>
-    This is header.
+    <nav>
+      <ul>
+        <li>
+          <a href="/" title="">Home</a>
+        </li>
+        <li>
+          <a href="/test" title="">Test</a>
+        </li>
+      </ul>
+    </nav>
   </header>
   <!-- / Header -->
 
@@ -24,7 +33,7 @@
 
   <!-- Footer -->
   <footer>
-    This is footer.
+    Footer content
   </footer>
   <!-- / Footer -->
 </body>
