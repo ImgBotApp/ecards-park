@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const config = require('./config/config');
 const glob = require('glob');
@@ -12,7 +10,7 @@ db.on('error', () => {
 });
 
 const models = glob.sync(config.root + '/app/models/*.js');
-models.forEach(function (model) {
+models.forEach((model) => {
   require(model);
 });
 const app = express();
@@ -22,4 +20,3 @@ module.exports = require('./config/express')(app, config);
 app.listen(config.port, () => {
   console.log('Express server listening on http://localhost:' + config.port);
 });
-
