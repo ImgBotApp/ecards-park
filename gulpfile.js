@@ -2,16 +2,24 @@ const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const plumber = require('gulp-plumber');
 const livereload = require('gulp-livereload');
-const sass = require('gulp-ruby-sass');
+const sass = require('gulp-sass');
 
+/*
 gulp.task('sass', () => {
-  return sass('./public/css/**/*.scss')
+  return sass('./app/scss/style.scss')
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
 });
+*/
+
+gulp.task('sass', function () {
+  return gulp.src('./app/scss/style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./public/css'));
+});
 
 gulp.task('watch', () => {
-  gulp.watch('./public/css/*.scss', ['sass']);
+  gulp.watch('./app/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('develop', () => {
