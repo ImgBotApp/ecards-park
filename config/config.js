@@ -8,7 +8,7 @@ const config = {
     app: {
       name: 'lovro'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 5000,
     db: 'mongodb://localhost/lovro-development'
   },
 
@@ -17,7 +17,7 @@ const config = {
     app: {
       name: 'lovro'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 5000,
     db: 'mongodb://localhost/lovro-test'
   },
 
@@ -26,7 +26,7 @@ const config = {
     app: {
       name: 'lovro'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 5000,
     db: 'mongodb://localhost/lovro-production'
   }
 };
