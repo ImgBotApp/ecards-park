@@ -10,6 +10,22 @@
   {% endif %}
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    This is header.
+  </header>
+  <!-- / Header -->
+
+  <!-- Main -->
+  <main>
   {% block content %}{% endblock %}
+  </main>
+  <!-- / Main -->
+
+  <!-- Footer -->
+  <footer>
+    This is footer.
+  </footer>
+  <!-- / Footer -->
 </body>
 </html>
