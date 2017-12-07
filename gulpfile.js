@@ -4,18 +4,14 @@ const plumber = require('gulp-plumber');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
 
-/*
-gulp.task('sass', () => {
-  return sass('./app/scss/style.scss')
-    .pipe(gulp.dest('./public/css'))
-    .pipe(livereload());
-});
-*/
-
 gulp.task('sass', function () {
   return gulp.src('./app/scss/style.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(sass({
+      includePaths : ['node_modules/foundation-sites/scss'],
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./public/css'))
+    .pipe(livereload());
 });
 
 gulp.task('watch', () => {

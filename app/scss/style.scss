@@ -1,2 +1,4 @@
 @charset "UTF-8";
-@import 'foundation/foundation';
+@import "foundation/foundation";
+
+@include foundation-everything;
