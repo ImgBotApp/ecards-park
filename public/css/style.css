@@ -7014,3 +7014,11 @@ a.thumbnail image {
     flex-direction: column-reverse;
   }
 }
+
+.button {
+  color: red;
+}
+
+.some-component {
+  color: blue;
+}

@@ -1,4 +1,11 @@
-@charset "UTF-8";
-@import "foundation/foundation";
+@charset 'UTF-8';
 
+// Imports for foundation
+@import 'foundation/foundation';
 @include foundation-everything;
+
+// Imports for base
+@import '../scss/base/buttons';
+
+// Imports for components
+@import '../scss/components/some-component';

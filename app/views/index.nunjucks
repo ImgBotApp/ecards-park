@@ -1,6 +1,17 @@
 {% extends 'layout.nunjucks' %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <p>Welcome to {{ title }}</p>
+  <div class="row">
+    <div class="column small-12">
+      <h1>{{ title }}</h1>
+      <p>Welcome to {{ title }}</p>
+      <button type="button" class="button">Some button</button>
+      <p class="some-component">Some text</p>
+    </div>
+  </div>
+
+<div class="grid-x">
+  <div class="cell">full width cell</div>
+  <div class="cell">full width cell</div>
+</div>
 {% endblock %}
