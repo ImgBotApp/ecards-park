@@ -1,0 +1,14 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": "off",
+    "func-names": 0,
+    "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],
+    "no-param-reassign": ["error", { "props": false }]
+  }
+}
