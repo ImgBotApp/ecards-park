@@ -6,14 +6,6 @@ const sass = require('gulp-sass');
 const babel = require('gulp-babel');
 
 // Files for JavaScript
-
-/*
-gulp.task('js', function() {
-  return gulp.src('./app/js/*.js')
-    .pipe(gulp.dest('./public/js'));
-});
-*/
-
 gulp.task('js', function() {
   return gulp.src('./app/js/*.js')
   .pipe(babel({
