@@ -3,10 +3,10 @@
 (function () {
   console.log('>>> loading validation');
 
-  var formElements = [{
+  const formElements = [{
     name: 'fullName',
     selector: '.js-full-name',
-    type: 'string',
+    type: 'text',
     isValid: false
   }, {
     name: 'email',
@@ -15,11 +15,11 @@
     isValid: false
   }];
 
-  for (var i = 0; i < formElements.length; i += 1) {
-    var element = document.querySelector(formElements[i].selector);
+  for (let i = 0; i < formElements.length; i += 1) {
+    let element = document.querySelector(formElements[i].selector);
 
-    element.addEventListener('blur', function(event) {
-      validate('type', event.target.value);
+    element.addEventListener('blur', (event) => {
+      validate(formElements[i].type, event.target.value);
     });
   }
 

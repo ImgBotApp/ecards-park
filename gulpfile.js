@@ -3,11 +3,23 @@ const nodemon = require('gulp-nodemon');
 const plumber = require('gulp-plumber');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
+const babel = require('gulp-babel');
 
 // Files for JavaScript
+
+/*
 gulp.task('js', function() {
   return gulp.src('./app/js/*.js')
     .pipe(gulp.dest('./public/js'));
+});
+*/
+
+gulp.task('js', function() {
+  return gulp.src('./app/js/*.js')
+  .pipe(babel({
+      presets: ['env']
+  }))
+  .pipe(gulp.dest('./public/js'))
 });
 
 // Files for SCSS
