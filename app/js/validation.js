@@ -18,7 +18,7 @@
   for (let i = 0; i < formElements.length; i += 1) {
     let element = document.querySelector(formElements[i].selector);
 
-    element.addEventListener('blur', (event) => {
+    element.addEventListener('blur', event => {
       validate(formElements[i].type, event.target.value);
     });
   }
