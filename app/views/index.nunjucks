@@ -1,17 +1,36 @@
 {% extends 'layout.nunjucks' %}
 
 {% block content %}
-  <div class="row">
-    <div class="column small-12">
-      <h1>{{ title }}</h1>
-      <p>Welcome to {{ title }}</p>
-      <button type="button" class="button">Some button</button>
-      <p class="some-component">Some text</p>
-    </div>
+{#
+<div class="row">
+  <div class="column small-12">
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    <button type="button" class="button">Some button</button>
+    <p class="some-component">Some text</p>
   </div>
+</div>
 
 <div class="grid-x">
   <div class="cell">full width cell</div>
   <div class="cell">full width cell</div>
 </div>
+#}
+
+<hr>
+<div>
+  <label>Some label for full name</label>
+  <input type="text" value="" class="js-full-name"/>
+  <p class="alert">Some error for full name</p>
+
+  <label>Some label for email</label>
+  <input type="text" value="" class="js-email"/>
+  <p class="alert">Some error for email</p>
+</div>
+<hr>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="../js/validation.js"></script>
 {% endblock %}

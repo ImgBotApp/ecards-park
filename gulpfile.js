@@ -4,6 +4,13 @@ const plumber = require('gulp-plumber');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
 
+// Files for JavaScript
+gulp.task('js', function() {
+  return gulp.src('./app/js/*.js')
+    .pipe(gulp.dest('./public/js'));
+});
+
+// Files for SCSS
 gulp.task('sass', function () {
   return gulp.src('./app/scss/style.scss')
     .pipe(sass({
@@ -14,6 +21,7 @@ gulp.task('sass', function () {
     .pipe(livereload());
 });
 
+// Watcher
 gulp.task('watch', () => {
   gulp.watch('./app/scss/**/*.scss', ['sass']);
 });
@@ -37,6 +45,7 @@ gulp.task('develop', () => {
 
 gulp.task('default', [
   'sass',
+  'js',
   'develop',
   'watch'
 ]);

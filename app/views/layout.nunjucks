@@ -36,5 +36,9 @@
     Footer content
   </footer>
   <!-- / Footer -->
+
+  <!-- Scripts -->
+  {% block scripts %}{% endblock %}
+  <!-- Scripts -->
 </body>
 </html>
