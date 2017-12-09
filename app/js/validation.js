@@ -2,6 +2,7 @@
 
 // TODO:
 // honeypot
+// rename notice to message all over
 
 (function () {
   // Defining form elements
@@ -47,7 +48,7 @@
       rules: {
         presence: true,
         checkbox: {
-          message: 'You need to agree with terms and conditions.',
+          message: 'Please agree with terms and conditions.',
         },
       },
       isValid: false,
@@ -143,7 +144,7 @@
       // Posting data
       // TODO: ajax call, delete simulation
       setTimeout(() => {
-        // Emptying input values
+        // Reseting input values
         for (let i = 0; i < formElements.inputs.length; i += 1) {
           const selectorInput = formElements.inputs[i].selector.input;
           const elementInput = document.querySelector(selectorInput);
