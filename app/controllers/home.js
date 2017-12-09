@@ -9,7 +9,7 @@ module.exports = (app) => {
 
 router.get('/', (req, res, next) => {
   res.render('index', {
-    title: 'Some new page'
+    title: 'Some new page',
   });
 
   /*
@@ -25,6 +25,12 @@ router.get('/', (req, res, next) => {
 
 router.get('/test', (req, res, next) => {
   res.render('index', {
-    title: 'Test page'
+    title: 'Test page',
+  });
+});
+
+router.get('/demo', (req, res, next) => {
+  res.render('demo', {
+    title: 'Demo page',
   });
 });

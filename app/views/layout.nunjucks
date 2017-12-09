@@ -20,6 +20,9 @@
         <li>
           <a href="/test" title="">Test</a>
         </li>
+        <li>
+          <a href="/demo" title="">Demo</a>
+        </li>
       </ul>
     </nav>
   </header>

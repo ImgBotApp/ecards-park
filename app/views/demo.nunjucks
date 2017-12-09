@@ -1,0 +1,52 @@
+{% extends 'layout.nunjucks' %}
+
+{% block content %}
+
+<!-- Forms -->
+<h2>Forms</h2>
+
+<h3>Newsleter subscription</h3>
+
+<div class="form-element">
+  <label for="">Full name</label>
+  <input type="text" id="" name="" value="" class="js-full-name-input" />
+  <p class="is-hidden sentence-case js-full-name-notice"></p>
+</div>
+
+<div class="form-element">
+  <label for="">Email address</label>
+  <input type="email" id="" name="" value="" class="js-email-input" />
+  <p class="is-hidden sentence-case js-email-notice"></p>
+</div>
+
+<div class="form-element">
+  <input type="checkbox" id="" name="" class="js-terms-input" />
+  <label for="">
+    <a href="#" title="">I agree with terms and conditions</a>
+  </label>
+  <p class="is-hidden sentence-case js-terms-notice"></p>
+</div>
+
+<div class="form-element">
+  <button type="button" class="button js-submit-button">
+    Submit <img class="spinner is-hidden" src="images/svg/animated/spinner.svg" alt="" />
+  </button>
+  <p class="is-hidden js-submit-notice">Data has been sent. Thank you.</p>
+</div>
+<!-- Forms -->
+
+<!-- Buttons -->
+<h3>Buttons</h3>
+
+<button type="button" class="button">Sample button</button>
+<button type="button" class="button">
+  Button with spinner <img class="spinner" src="images/svg/animated/spinner.svg" alt="" />
+</button>
+<!-- / Buttons -->
+
+{% endblock %}
+
+{% block scripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+<script src="../js/validation.js"></script>
+{% endblock %}
