@@ -22,7 +22,7 @@
 <div class="form-element">
   <input type="checkbox" id="" name="" class="js-terms-input" />
   <label for="">
-    <a href="#" title="">I agree with terms and conditions</a>
+    <a href="#" title="">I agree with legal terms</a>
   </label>
   <p class="is-hidden sentence-case js-terms-notice"></p>
 </div>
@@ -43,6 +43,14 @@
   Button with spinner <img class="spinner" src="images/svg/animated/spinner.svg" alt="" />
 </button>
 <!-- / Buttons -->
+
+<!-- Checkboxes -->
+<h3>Checkboxes</h3>
+
+<input id="sample-checkbox" type="checkbox" /><label for="sample-checkbox">Unchecked checkbox</label>
+
+<input id="sample-checkbox-checked" type="checkbox" checked /><label for="sample-checkbox-checked">Checked checkbox</label>
+<!-- / Checkboxes -->
 
 {% endblock %}
 
