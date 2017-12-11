@@ -1,4 +1,14 @@
-# Locally
+# Installing
+
+Install Node packages
+
+```
+npm i
+```
+
+# Running
+
+## Locally
 
 Run server
 
@@ -6,7 +16,7 @@ Run server
 node app.js
 ```
 
-# Heroku
+## Deploying
 
 Login
 
