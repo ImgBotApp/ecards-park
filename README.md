@@ -8,6 +8,12 @@ node app.js
 
 # Heroku
 
+Login
+
+```
+heroku login
+```
+
 Deploying code
 
 ```
