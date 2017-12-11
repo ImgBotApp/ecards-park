@@ -46,7 +46,7 @@ app.listen(app.get('port'), () => {
   console.log('App is running, server is listening on port', app.get('port'));
 });
 
-/* JUST FOR HELP
+/* JUST FOR HELP AND LATER USE
 const express = require('express');
 const config = require('./config/config');
 const glob = require('glob');
