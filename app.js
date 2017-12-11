@@ -1,4 +1,33 @@
 const express = require('express');
+const nunjucks = require('nunjucks');
+
+const app = express();
+
+nunjucks.configure('./app/views', {
+  autoescape: true,
+  express: app,
+});
+
+// Routes
+app.get('/', (req, res) => {
+  res.render('index.nunjucks', {
+    title: 'Home page',
+  });
+});
+
+app.get('/demo', (req, res) => {
+  res.render('demo.nunjucks', {
+    title: 'Demo page',
+  });
+});
+
+// Run server and listen on specific port
+app.listen(5000, () => {
+  console.log('Express server listening on http://localhost:5000');
+});
+
+/*
+const express = require('express');
 const config = require('./config/config');
 const glob = require('glob');
 const mongoose = require('mongoose');
@@ -20,3 +49,4 @@ module.exports = require('./config/express')(app, config);
 app.listen(config.port, () => {
   console.log('Express server listening on http://localhost:' + config.port);
 });
+*/

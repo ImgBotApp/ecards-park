@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 // const nodemon = require('gulp-nodemon');
+const nunjucks = require('gulp-nunjucks-html');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
@@ -27,6 +28,16 @@ gulp.task('sass', () => {
 gulp.task('images', () => {
   gulp.src('./app/images/**/*.svg')
     .pipe(gulp.dest('./public/images'));
+});
+
+// Files for nunjucks
+gulp.task('nunjucks', () => {
+  gulp.src('./app/views/*.nunjucks')
+    .pipe(nunjucks({
+      searchPaths: ['app/views'],
+      ext: '.html',
+    }))
+    .pipe(gulp.dest('./public'));
 });
 
 // Watcher
@@ -63,10 +74,11 @@ gulp.task('develop', () => {
 */
 
 gulp.task('default', [
-  'js',
-  'sass',
-  'images',
-  'develop',
-  'watch',
+  // 'js',
+  // 'sass',
+  // 'images',
+  // 'develop',
+  // 'watch',
+  'nunjucks',
   'browser-sync',
 ]);
