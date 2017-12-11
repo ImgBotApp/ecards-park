@@ -1,18 +1,31 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 
+/**
+ * Express settings
+ */
+
 const app = express();
+
+// Define folder for serving static files
+app.use(express.static('public'));
 
 // Setting port
 app.set('port', (process.env.PORT || 5000));
 
-// Configuring nunjucks
+/**
+ * Configuring nunjucks
+ */
+
 nunjucks.configure('./app/views', {
   autoescape: true,
   express: app,
 });
 
-// Routes
+/**
+ * Express routes
+ */
+
 app.get('/', (req, res) => {
   res.render('index.nunjucks', {
     title: 'Home page',
@@ -25,7 +38,10 @@ app.get('/demo', (req, res) => {
   });
 });
 
-// Run server and listen on port
+/**
+ * Running server and listen on port
+ */
+
 app.listen(app.get('port'), () => {
   console.log('App is running, server is listening on port', app.get('port'));
 });

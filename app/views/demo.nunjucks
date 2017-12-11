@@ -8,6 +8,9 @@
   </div>
 </div>
 
+<p>This image is served from public folder by calling "images/test.jpg"</p>
+<img src="images/test.jpg" />
+
 <!-- Forms -->
 <h2>Forms</h2>
 
