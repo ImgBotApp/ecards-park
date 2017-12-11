@@ -1,4 +1,4 @@
-# Installing
+# How to install
 
 Install Node packages
 
@@ -6,7 +6,7 @@ Install Node packages
 npm i
 ```
 
-# Running
+# How to run
 
 ## Locally
 
