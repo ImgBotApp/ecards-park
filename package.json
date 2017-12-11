@@ -11,6 +11,9 @@
     "nunjucks": "^3.0.1"
   },
   "devDependencies": {
+    "eslint": "^4.13.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
     "gulp": "^3.9.1"
   }
 }
