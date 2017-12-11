@@ -20,6 +20,7 @@ app.set('port', (process.env.PORT || 5000));
 nunjucks.configure('./app/views', {
   autoescape: true,
   express: app,
+  watch: true,
 });
 
 /**
