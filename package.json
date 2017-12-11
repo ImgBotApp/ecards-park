@@ -4,11 +4,7 @@
   "private": false,
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "NODE_ENV=test mocha --recursive test",
-    "test:coverage": "nyc npm test",
-    "test:unit": "mocha --recursive test/middleware test/models test/routes",
-    "test:integration": "mocha --recursive test/integration"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.13.3",

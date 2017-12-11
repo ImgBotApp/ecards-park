@@ -12,7 +12,6 @@ nunjucks.configure('./app/views', {
   express: app,
 });
 
-
 // Routes
 app.get('/', (req, res) => {
   res.render('index.nunjucks', {
@@ -26,12 +25,12 @@ app.get('/demo', (req, res) => {
   });
 });
 
-// Run server and listen on specific port
+// Run server and listen on port
 app.listen(app.get('port'), () => {
   console.log('App is running, server is listening on port', app.get('port'));
 });
 
-/*
+/* JUST FOR HELP
 const express = require('express');
 const config = require('./config/config');
 const glob = require('glob');
