@@ -1,8 +1,8 @@
 const gulp = require('gulp');
-const nodemon = require('gulp-nodemon');
-const livereload = require('gulp-livereload');
+// const nodemon = require('gulp-nodemon');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
+const browserSync = require('browser-sync').create();
 
 // Files for JavaScript
 gulp.task('js', () => {
@@ -20,8 +20,7 @@ gulp.task('sass', () => {
       includePaths: ['node_modules/foundation-sites/scss'],
       outputStyle: 'expanded',
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./public/css'))
-    .pipe(livereload());
+    .pipe(gulp.dest('./public/css'));
 });
 
 // Files for images
@@ -35,6 +34,16 @@ gulp.task('watch', () => {
   gulp.watch('./app/scss/**/*.scss', ['sass']);
 });
 
+// Static server
+gulp.task('browser-sync', () => {
+  browserSync.init({
+    server: {
+      baseDir: './public',
+    },
+  });
+});
+
+/*
 gulp.task('develop', () => {
   livereload.listen();
   nodemon({
@@ -51,6 +60,7 @@ gulp.task('develop', () => {
     this.stderr.pipe(process.stderr);
   });
 });
+*/
 
 gulp.task('default', [
   'js',
@@ -58,4 +68,5 @@ gulp.task('default', [
   'images',
   'develop',
   'watch',
+  'browser-sync',
 ]);

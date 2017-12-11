@@ -28,6 +28,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
     "chai": "^3.5.0",
     "debug": "^2.2.0",
     "eslint": "^4.12.1",
@@ -37,7 +38,6 @@
     "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^7.0.0",
-    "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
     "gulp-plumber": "^1.0.0",
     "gulp-ruby-sass": "^2.0.1",
