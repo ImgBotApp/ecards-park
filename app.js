@@ -3,10 +3,15 @@ const nunjucks = require('nunjucks');
 
 const app = express();
 
+// Setting port
+app.set('port', (process.env.PORT || 5000));
+
+// Configuring nunjucks
 nunjucks.configure('./app/views', {
   autoescape: true,
   express: app,
 });
+
 
 // Routes
 app.get('/', (req, res) => {
@@ -22,8 +27,8 @@ app.get('/demo', (req, res) => {
 });
 
 // Run server and listen on specific port
-app.listen(5000, () => {
-  console.log('Express server listening on http://localhost:5000');
+app.listen(app.get('port'), () => {
+  console.log('App is running, server is listening on port', app.get('port'));
 });
 
 /*
