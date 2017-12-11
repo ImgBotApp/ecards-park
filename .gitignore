@@ -1,7 +1,4 @@
 node_modules/
-public/
-.nyc_output
-.sass-cache
 *.log
 .DS_Store
 .env
