@@ -11,6 +11,7 @@
     "nunjucks": "^3.0.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.13",
     "eslint": "^4.13.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
