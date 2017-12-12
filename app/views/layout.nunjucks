@@ -9,6 +9,8 @@
 <body>
   <!-- Header -->
   <header>
+    <img src="images/brand/logo.svg" alt="" width="75" height="75" />
+
     <nav>
       <ul>
         <li>
