@@ -4,7 +4,8 @@
   "private": false,
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "devel": "gulp"
   },
   "dependencies": {
     "express": "^4.13.3",
@@ -16,6 +17,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1"
   }
 }

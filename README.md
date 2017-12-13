@@ -10,7 +10,13 @@ npm i
 
 ## Locally
 
-Run server
+Run proxy server with browser-sync (development mode)
+
+```
+npm run devel
+```
+
+Run only Express server
 
 ```
 node app.js
