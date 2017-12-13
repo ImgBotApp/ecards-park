@@ -1,6 +1,6 @@
 {
   "name": "start-it",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "app.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
     "gulp-logger": "0.0.2",
-    "gulp-nodemon": "^2.2.1"
+    "gulp-nodemon": "^2.2.1",
+    "vinyl-paths": "^2.1.0"
   }
 }

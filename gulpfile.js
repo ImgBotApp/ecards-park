@@ -3,8 +3,9 @@ const browserSync = require('browser-sync');
 const nodemon = require('gulp-nodemon');
 const del = require('del');
 const logger = require('gulp-logger');
+const vinylPaths = require('vinyl-paths');
 
-const projectName = '[send-it]';
+const logPrefix = '[send-it]';
 
 /**
  * Browser-sync taks
@@ -31,11 +32,17 @@ gulp.task('nodemon', (callback) => {
 });
 
 /**
- * Clean public folder task
+ * Empty public folder task
  */
 
-gulp.task('clean-public-folder', () => {
-  del('public/**/*');
+gulp.task('empty-public-folder', () => {
+  gulp.src('public/**/*')
+    .pipe(vinylPaths(del))
+    .pipe(logger({
+      before: `${logPrefix} Starting cleaning public folder.`,
+      after: `${logPrefix} Finished cleaning public folder`,
+      showChange: true,
+    }));
 });
 
 /**
@@ -47,8 +54,8 @@ gulp.task('copy-images', () => {
     './app/images/**/*.svg',
     './app/images/**/*.jpg',
   ]).pipe(logger({
-    before: `${projectName} Starting: Images copied to public folder.`,
-    after: `${projectName} End: Images copied to public folder.`,
+    before: `${logPrefix} Starting: Images copied to public folder.`,
+    after: `${logPrefix} End: Images copied to public folder.`,
     showChange: true,
   })).pipe(gulp.dest('./public/images'));
 });
@@ -58,7 +65,7 @@ gulp.task('copy-images', () => {
  */
 
 gulp.task('default', [
-  'clean-public-folder',
+  'empty-public-folder',
   'copy-images',
   'browser-sync',
 ], () => {
