@@ -24,12 +24,6 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./public/css'));
 });
 
-// Files for images
-gulp.task('images', () => {
-  gulp.src('./app/images/**/*.svg')
-    .pipe(gulp.dest('./public/images'));
-});
-
 // Files for nunjucks
 gulp.task('nunjucks', () => {
   gulp.src('./app/views/*.nunjucks')
