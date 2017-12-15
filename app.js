@@ -17,11 +17,30 @@ app.set('port', (process.env.PORT || 5000));
  * Configuring nunjucks
  */
 
-nunjucks.configure('./app/views', {
-  autoescape: true,
-  express: app,
-  watch: true,
-});
+nunjucks
+  .configure('./app/views', {
+    autoescape: true,
+    express: app,
+    watch: true,
+  })
+  // Adding global information about companies and page
+  .addGlobal('getCompanies', (hasSuffix) => {
+    let companies = null;
+    const companyFirst = 'Žiga Vukčevič s.p.';
+    const companySecond = 'Lovro Podobnik s.p.';
+
+    if (hasSuffix) {
+      companies = `${companyFirst}'s & ${companySecond}'s`;
+    } else {
+      companies = `${companyFirst} & ${companySecond}`;
+    }
+
+    return companies;
+  })
+  .addGlobal('getPage', () => ({
+    name: 'send-it.com',
+    href: 'http://www.send-it.com',
+  }));
 
 /**
  * Express routes
@@ -36,6 +55,18 @@ app.get('/', (req, res) => {
 app.get('/demo', (req, res) => {
   res.render('demo.nunjucks', {
     title: 'Demo page',
+  });
+});
+
+app.get('/terms-of-service', (req, res) => {
+  res.render('terms-of-service.nunjucks', {
+    title: 'Terms of service',
+  });
+});
+
+app.get('/privacy-policy', (req, res) => {
+  res.render('privacy-policy.nunjucks', {
+    title: 'Privacy policy',
   });
 });
 

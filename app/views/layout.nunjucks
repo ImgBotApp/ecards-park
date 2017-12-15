@@ -32,7 +32,7 @@
 
   <!-- Footer -->
   <footer>
-    Footer content
+  {% include 'footer.nunjucks' %}
   </footer>
   <!-- / Footer -->
 
