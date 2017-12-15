@@ -1,0 +1,14 @@
+{% set page = getPageInfo() %}
+
+<div class="row">
+  <div class="column small-12">
+    Cookies on the {{ page.name.url }} website
+  </div>
+  <div class="column small-12">
+    We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the {{ page.name.url }} website. However, you can change your cookie settings at any time.
+  </div>
+  <div class="column small-12">
+    <button>Continue</button>
+    <a href="cookie-policy" title="Cookie policy">Cookie policy</a>
+  </div>
+</div>

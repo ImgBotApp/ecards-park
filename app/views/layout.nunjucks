@@ -36,6 +36,10 @@
   </footer>
   <!-- / Footer -->
 
+  <!-- Cookie bar -->
+  {% include 'legal/cookies-bar.nunjucks' %}
+  <!-- / Cookie bar -->
+
   <!-- Scripts -->
   {% block scripts %}{% endblock %}
   <!-- Scripts -->

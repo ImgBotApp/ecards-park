@@ -37,8 +37,11 @@ nunjucks
 
     return companies;
   })
-  .addGlobal('getPage', () => ({
-    name: 'send-it.com',
+  .addGlobal('getPageInfo', () => ({
+    name: {
+      brand: 'send-it',
+      url: 'send-it.com',
+    },
     href: 'http://www.send-it.com',
   }));
 
@@ -59,14 +62,20 @@ app.get('/demo', (req, res) => {
 });
 
 app.get('/terms-of-service', (req, res) => {
-  res.render('terms-of-service.nunjucks', {
+  res.render('legal/terms-of-service.nunjucks', {
     title: 'Terms of service',
   });
 });
 
 app.get('/privacy-policy', (req, res) => {
-  res.render('privacy-policy.nunjucks', {
+  res.render('legal/privacy-policy.nunjucks', {
     title: 'Privacy policy',
+  });
+});
+
+app.get('/cookie-policy', (req, res) => {
+  res.render('legal/cookie-policy.nunjucks', {
+    title: 'Cookie policy',
   });
 });
 
