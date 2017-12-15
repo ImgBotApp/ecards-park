@@ -9,7 +9,7 @@
 <body>
   <!-- Header -->
   <header>
-    <img src="images/brand/logo.svg" alt="" width="75" height="75" />
+    <img src="images/brand/logo.svg" alt="" />
 
     <nav>
       <ul>
@@ -32,7 +32,7 @@
 
   <!-- Footer -->
   <footer>
-  {% include 'footer.nunjucks' %}
+  {% include 'partials/footer.nunjucks' %}
   </footer>
   <!-- / Footer -->
 

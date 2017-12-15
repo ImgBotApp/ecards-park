@@ -1,4 +1,4 @@
-{% extends 'layout.nunjucks' %}
+{% extends 'base.nunjucks' %}
 
 {% block content %}
 
