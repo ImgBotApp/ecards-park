@@ -9,7 +9,7 @@
     <div class="cell small-12">
       <h1>{{ title }}</h1>
       <p>This image is served from public folder by calling "images/test.jpg"</p>
-      <img src="images/jpg/test.jpg" />
+      <img src="images/jpg/test.jpg" alt="test" />
     </div>
     <!-- Forms -->
     <div class="cell small-12">
@@ -31,8 +31,8 @@
         <button type="button" class="button js-submit-button">
           Subscribe <img class="spinner is-hidden" src="images/svg/animated/spinner.svg" alt="" />
         </button>
-        <p><small>By clicking "Subscribe" I agree to receive news, promotions, information and offers from {{ page.name.brand }}. See our <a href="privacy-policy" title="Privacy policy">Privacy policy</a> and <a href="terms-of-service" title="Terms of service">Terms of service</a>.</p>
-        <p class="is-hidden js-submit-notice">Data has been sent. Thank you.</small></p>
+        <p><small>By clicking "Subscribe" I agree to receive news, promotions, information and offers from {{ page.name.brand }}. See our <a href="privacy-policy" title="Privacy policy">Privacy policy</a> and <a href="terms-of-service" title="Terms of service">Terms of service</a>.</small></p>
+        <p class="is-hidden js-submit-notice">Data has been sent. Thank you.</p>
       </div>
     </div>
     <!-- / Forms -->
