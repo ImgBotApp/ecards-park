@@ -1,3 +1,11 @@
-.sentence-case::first-letter {
+// Typography
+
+.case-upper {
   text-transform: uppercase;
+}
+
+.case-sentence {
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }

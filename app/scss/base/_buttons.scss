@@ -4,4 +4,14 @@
   .spinner {
     margin-left: 5px;
   }
+
+  .la {
+    &.-left {
+      margin-right: 9px;
+    }
+
+    &.-right {
+      margin-left: 9px;
+    }
+  }
 }

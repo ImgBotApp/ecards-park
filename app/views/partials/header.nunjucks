@@ -1,22 +1,36 @@
-<!-- Logo -->
-<img src="images/brand/logo.svg" alt="logo" />
-<!-- / Logo -->
+<div class="grid-container">
+  <div class="grid-x grid-margin-x grid-margin-y">
 
-<!-- Navigation -->
-<nav>
-  <ul>
-    <li><a href="/" title="Home">Home</a></li>
-    <li><a href="/demo" title="Demo">Demo</a></li>
-  </ul>
-</nav>
-<!-- / Navigation -->
+    <!-- Logo -->
+    <div class="cell small-12 medium-6 large-2">
+      <a href="/" title="Home">
+        <img src="images/brand/logo.svg" alt="logo" />
+      </a>
+    </div>
+    <!-- / Logo -->
 
-<!-- Facebook -->
-<div class="fb-like"
-     data-href="https://www.facebook.com/Digitalna-ladja-112957788789031/" data-layout="button_count"
-     data-action="like"
-     data-size="large"
-     data-show-faces="false"
-     data-share="true">
+    <!-- Navigation -->
+    <div class="cell small-12 medium-3 large-6 large-offset-1">
+      <nav>
+        <ul class="menu">
+          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/demo" title="Demo">Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- / Navigation -->
+
+    <!-- Facebook -->
+    <div class="cell small-12 medium-3">
+      <div class="fb-like"
+          data-href="https://www.facebook.com/Digitalna-ladja-112957788789031/" data-layout="button_count"
+          data-action="like"
+          data-size="large"
+          data-show-faces="false"
+          data-share="true">
+      </div>
+    </div>
+    <!-- / Facebook -->
+
+  </div>
 </div>
-<!-- / Facebook -->

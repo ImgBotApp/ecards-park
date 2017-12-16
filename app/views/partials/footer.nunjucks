@@ -1,17 +1,43 @@
 {% set currentYear = currentYear %}
 {% set page = getPageInfo() %}
 
-<img src="images/brand/logo.svg" alt="logo" width="100" />
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse omnis quibusdam accusamus corporis corrupti eligendi, quas aspernatur!</p>
+<div class="grid-container">
+  <div class="grid-x grid-margin-x grid-margin-y">
 
-<ul>
-  <li><a href="privacy-policy" title="Privacy policy">Privacy policy</a></li>
-  <li><a href="terms-of-service" title="Terms of service">Terms of service</a></li>
-  <li><a href="cookie-policy" title="Cookie policy">Cookie policy</a></li>
-</ul>
+    <!-- Logo & info -->
+    <div class="cell small-12 medium-6 large-5">
+      <img src="images/brand/logo.svg" alt="logo" width="100" />
+      <hr />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse omnis quibusdam accusamus corporis corrupti eligendi, quas aspernatur!</p>
+    </div>
+    <!-- / Logo & info -->
 
-<ul>
-  <li><a href="#" title="Facebook page"><i class="la la-facebook"></i></a></li>
-</ul>
+    <!-- Social -->
+    <div class="cell small-12 medium-3 large-offset-1">
+      <h6 class="case-upper">Social networks</h6>
+      <ul class="no-bullet">
+        <li><a href="#" title="Facebook page"><i class="la la-facebook"></i> Facebook</a></li>
+        <li><a href="#" title="Twitter page"><i class="la la-twitter"> Twitter</i></a></li>
+      </ul>
+    </div>
+    <!-- / Social -->
 
-<p>Copyright © {{ currentYear }} {{ page.name.url }} | All rights reserved.</p>
+    <!-- Legal -->
+    <div class="cell small-12 medium-3">
+      <h6 class="case-upper">Legal docs</h6>
+      <ul>
+        <li><a href="privacy-policy" title="Privacy policy">Privacy policy</a></li>
+        <li><a href="terms-of-service" title="Terms of service">Terms of service</a></li>
+        <li><a href="cookie-policy" title="Cookie policy">Cookie policy</a></li>
+      </ul>
+    </div>
+    <!-- / Legal -->
+
+    <!-- Copyright -->
+    <div class="cell small-12">
+      <small>Copyright © {{ currentYear }} {{ page.name.url }} | All rights reserved.</small>
+    </div>
+    <!-- / Copyright -->
+
+  </div>
+</div>

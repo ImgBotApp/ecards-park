@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="column small-12">
-    <h1>{{ title }}</h1>
+<div class="grid-container">
+  <div class="grid-x grid-margin-x grid-margin-y">
+    <div class="cell small-12 large-9">
+      <h1>{{ title }}</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni magnam ab, aliquid nesciunt et animi exercitationem neque veniam at architecto doloribus voluptate eaque aspernatur ipsam quae nobis quisquam voluptatibus aliquam!</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni magnam ab, aliquid nesciunt et animi exercitationem neque veniam at architecto doloribus voluptate eaque aspernatur ipsam quae nobis quisquam voluptatibus aliquam!</p>
+    </div>
   </div>
 </div>
 
-<div class="grid-x">
-  <div class="cell">full width cell</div>
-  <div class="cell">full width cell</div>
-</div>
 {% endblock %}
