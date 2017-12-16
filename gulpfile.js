@@ -4,6 +4,7 @@ const nodemon = require('gulp-nodemon');
 const del = require('del');
 const logger = require('gulp-logger');
 const vinylPaths = require('vinyl-paths');
+const cat = require('gulp-cat');
 
 const logPrefix = '[send-it]';
 
@@ -36,6 +37,17 @@ gulp.task('nodemon', (callback) => {
 */
 
 /**
+ * Show Ascii art
+ */
+
+gulp.task('ascii-art', () => {
+  const task = gulp.src('ascii-art.txt')
+    .pipe(cat());
+
+  return task;
+});
+
+/**
  * Empty public folder task
  */
 
@@ -66,7 +78,7 @@ gulp.task('copy-images', () => {
  * Default task
  */
 
-gulp.task('default', gulp.series('empty-public-folder', 'copy-images'));
+gulp.task('default', gulp.series('ascii-art', 'empty-public-folder', 'copy-images'));
 
 //
 

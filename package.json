@@ -19,6 +19,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-cat": "^0.3.3",
     "gulp-logger": "0.0.2",
     "gulp-nodemon": "^2.2.1",
     "vinyl-paths": "^2.1.0"
