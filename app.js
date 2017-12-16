@@ -23,7 +23,7 @@ nunjucks
     express: app,
     watch: true,
   })
-  // Adding global information about companies and page
+  // Adding global information
   .addGlobal('getCompanies', (hasSuffix) => {
     let companies = null;
     const companyFirst = 'Žiga Vukčevič s.p.';
@@ -43,7 +43,8 @@ nunjucks
       url: 'send-it.com',
     },
     href: 'http://www.send-it.com',
-  }));
+  }))
+  .addGlobal('currentYear', new Date().getFullYear());
 
 /**
  * Express routes

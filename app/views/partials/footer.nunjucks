@@ -1,5 +1,14 @@
+{% set currentYear = currentYear %}
+{% set page = getPageInfo() %}
+
 <ul>
   <li><a href="privacy-policy" title="Privacy policy">Privacy policy</a></li>
   <li><a href="terms-of-service" title="Terms of service">Terms of service</a></li>
   <li><a href="cookie-policy" title="Cookie policy">Cookie policy</a></li>
 </ul>
+
+<ul>
+  <li><a href="#" title="Facebook page"><i class="la la-facebook"></i></a></li>
+</ul>
+
+<p>Copyright © {{ currentYear }} {{ page.name.url }} | All rights reserved.</p>

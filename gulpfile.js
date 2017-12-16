@@ -75,11 +75,31 @@ gulp.task('copy-images', () => {
 });
 
 /**
+ * Copy CSS files
+ */
+
+gulp.task('copy-css', () => {
+  const task = gulp.src('./app/css/**/*.css')
+    .pipe(logger({ showChange: true }))
+    .pipe(gulp.dest('./public/css'));
+
+  return task;
+});
+
+/**
+ * Copy font files
+ */
+
+gulp.task('copy-fonts', () => {
+  const task = gulp.src('./app/fonts/**/*')
+    .pipe(logger({ showChange: true }))
+    .pipe(gulp.dest('./public/fonts'));
+
+  return task;
+});
+
+/**
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images'));
-
-//
-
-// gulp.task('heroku', gulp.series('delete:all', 'imagemin:all', 'copy:all', 'njk', 'sass', 'js', 'heroku:serve'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images', 'copy-fonts', 'copy-css'));
