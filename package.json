@@ -20,6 +20,7 @@
     "eslint-plugin-import": "^2.8.0",
     "foundation-sites": "^6.4.4-rc1",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-cat": "^0.3.3",
     "gulp-logger": "0.0.2",
     "gulp-nodemon": "^2.2.1",

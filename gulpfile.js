@@ -6,6 +6,7 @@ const logger = require('gulp-logger');
 const vinylPaths = require('vinyl-paths');
 const cat = require('gulp-cat');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
 
 /**
  * Browser-sync taks
@@ -92,6 +93,10 @@ gulp.task('scss', () => {
       includePaths: ['node_modules/foundation-sites/scss'],
       outputStyle: 'expanded',
     }).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false,
+    }))
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest('./public/css'));
 
