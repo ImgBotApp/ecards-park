@@ -51,7 +51,7 @@ gulp.task('ascii-art', () => {
  * Empty public folder task
  */
 
-gulp.task('empty-public-folder', () => {
+gulp.task('delete-public', () => {
   const task = gulp.src('public')
     .pipe(vinylPaths(del))
     .pipe(logger({ showChange: false }));
@@ -78,7 +78,7 @@ gulp.task('copy-images', () => {
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'empty-public-folder', 'copy-images'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images'));
 
 //
 
