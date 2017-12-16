@@ -11,38 +11,40 @@ const logPrefix = '[send-it]';
  * Browser-sync taks
  */
 
+/*
 gulp.task('browser-sync', ['nodemon'], () => {
   browserSync.init(null, {
     proxy: 'http://localhost:5000',
   });
 });
+*/
 
 /**
  * Nodemon task
  */
 
+/*
 gulp.task('nodemon', (callback) => {
   let callbackCalled = false;
-  return nodemon({ script: './app.js' }).on('start', () => {
+  nodemon({ script: './app.js' }).on('start', () => {
     if (!callbackCalled) {
       callbackCalled = true;
       callback();
     }
   });
 });
+*/
 
 /**
  * Empty public folder task
  */
 
 gulp.task('empty-public-folder', () => {
-  gulp.src('public/**/*')
+  const task = gulp.src('public')
     .pipe(vinylPaths(del))
-    .pipe(logger({
-      before: `${logPrefix} Starting cleaning public folder.`,
-      after: `${logPrefix} Finished cleaning public folder`,
-      showChange: true,
-    }));
+    .pipe(logger({ showChange: false }));
+
+  return task;
 });
 
 /**
@@ -50,24 +52,22 @@ gulp.task('empty-public-folder', () => {
  */
 
 gulp.task('copy-images', () => {
-  gulp.src([
+  const task = gulp.src([
     './app/images/**/*.svg',
     './app/images/**/*.jpg',
-  ]).pipe(logger({
-    before: `${logPrefix} Starting: Images copied to public folder.`,
-    after: `${logPrefix} End: Images copied to public folder.`,
-    showChange: true,
-  })).pipe(gulp.dest('./public/images'));
+  ])
+    .pipe(logger({ showChange: true }))
+    .pipe(gulp.dest('./public/images'));
+
+  return task;
 });
 
 /**
  * Default task
  */
 
-gulp.task('default', [
-  'empty-public-folder',
-  'copy-images',
-  'browser-sync',
-], () => {
-  gulp.watch(['./app/scss/base/_buttons.scss'], browserSync.reload);
-});
+gulp.task('default', gulp.series('empty-public-folder', 'copy-images'));
+
+//
+
+// gulp.task('heroku', gulp.series('delete:all', 'imagemin:all', 'copy:all', 'njk', 'sass', 'js', 'heroku:serve'));

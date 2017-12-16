@@ -7,20 +7,11 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <div id="fb-root"></div>
+
   <!-- Header -->
   <header>
-    <img src="images/brand/logo.svg" alt="" />
-
-    <nav>
-      <ul>
-        <li>
-          <a href="/" title="">Home</a>
-        </li>
-        <li>
-          <a href="/demo" title="">Demo</a>
-        </li>
-      </ul>
-    </nav>
+  {% include 'partials/header.nunjucks' %}
   </header>
   <!-- / Header -->
 
@@ -41,7 +32,9 @@
   <!-- / Cookie bar -->
 
   <!-- Scripts -->
-  {% block scripts %}{% endblock %}
+  {% block scripts %}
+  <script src="../js/facebook.js"></script>
+  {% endblock %}
   <!-- Scripts -->
 </body>
 </html>
