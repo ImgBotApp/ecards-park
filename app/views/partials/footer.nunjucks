@@ -1,6 +1,9 @@
 {% set currentYear = currentYear %}
 {% set page = getPageInfo() %}
 
+<img src="images/brand/logo.svg" alt="logo" width="100" />
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse omnis quibusdam accusamus corporis corrupti eligendi, quas aspernatur!</p>
+
 <ul>
   <li><a href="privacy-policy" title="Privacy policy">Privacy policy</a></li>
   <li><a href="terms-of-service" title="Terms of service">Terms of service</a></li>
