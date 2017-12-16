@@ -1,16 +1,18 @@
+{% set page = getPageInfo() %}
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
 
-  <!-- Facebook -->
-  <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+  <!-- OG -->
+  <meta property="og:url" content="{{ page.href }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Your Website Title" />
-  <meta property="og:description" content="Your description" />
-  <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-  <!-- / Facebook -->
+  <meta property="og:title" content="{{ page.og.title }}" />
+  <meta property="og:description" content="{{ page.og.desc }}" />
+  <meta property="og:image" content="{{ page.og.image }}" />
+  <!-- / OG -->
 
   <title>{{ title }}</title>
   <link rel="stylesheet" href="css/style.css" />
@@ -46,6 +48,6 @@
   <!-- Scripts -->
   <script src="../js/facebook.js"></script>
   {% block scripts %}{% endblock %}
-  <!-- Scripts -->
+  <!-- / Scripts -->
 </body>
 </html>

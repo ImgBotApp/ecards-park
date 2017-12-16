@@ -43,6 +43,11 @@ nunjucks
       url: 'send-it.com',
     },
     href: 'http://www.send-it.com',
+    og: {
+      title: 'Send it title',
+      desc: 'Send it desc',
+      image: 'http://www.send-it.com/images/social/og-image.jpg',
+    },
   }))
   .addGlobal('currentYear', new Date().getFullYear());
 
