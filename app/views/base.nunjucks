@@ -3,12 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
+
+  <!-- Facebook -->
+  <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Website Title" />
+  <meta property="og:description" content="Your description" />
+  <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+  <!-- / Facebook -->
+
   <title>{{ title }}</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/line-awesome.min.css" />
 </head>
 <body>
+  <!-- Facebook -->
   <div id="fb-root"></div>
+  <!-- / Facebook -->
 
   <!-- Header -->
   <header>
