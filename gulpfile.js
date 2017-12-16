@@ -5,8 +5,7 @@ const del = require('del');
 const logger = require('gulp-logger');
 const vinylPaths = require('vinyl-paths');
 const cat = require('gulp-cat');
-
-const logPrefix = '[send-it]';
+const sass = require('gulp-sass');
 
 /**
  * Browser-sync taks
@@ -86,6 +85,19 @@ gulp.task('copy-css', () => {
   return task;
 });
 
+// Files for SCSS
+gulp.task('scss', () => {
+  const task = gulp.src('./app/scss/style.scss')
+    .pipe(sass({
+      includePaths: ['node_modules/foundation-sites/scss'],
+      outputStyle: 'expanded',
+    }).on('error', sass.logError))
+    .pipe(logger({ showChange: true }))
+    .pipe(gulp.dest('./public/css'));
+
+  return task;
+});
+
 /**
  * Copy font files
  */
@@ -114,4 +126,4 @@ gulp.task('copy-js', () => {
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images', 'copy-fonts', 'copy-css', 'copy-js'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images', 'copy-fonts', 'copy-css', 'scss', 'copy-js'));
