@@ -33,9 +33,8 @@
   <!-- / Cookie bar -->
 
   <!-- Scripts -->
-  {% block scripts %}
   <script src="../js/facebook.js"></script>
-  {% endblock %}
+  {% block scripts %}{% endblock %}
   <!-- Scripts -->
 </body>
 </html>

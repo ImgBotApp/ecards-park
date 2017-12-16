@@ -99,7 +99,19 @@ gulp.task('copy-fonts', () => {
 });
 
 /**
+ * Copy JavaScript files
+ */
+
+gulp.task('copy-js', () => {
+  const task = gulp.src('./app/js/**/*')
+    .pipe(logger({ showChange: true }))
+    .pipe(gulp.dest('./public/js'));
+
+  return task;
+});
+
+/**
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images', 'copy-fonts', 'copy-css'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images', 'copy-fonts', 'copy-css', 'copy-js'));
