@@ -24,7 +24,10 @@ nunjucks
     express: app,
     watch: true,
   })
+
   // Adding global information
+
+  // Get companies information
   .addGlobal('getCompanies', (hasSuffix) => {
     let companies = null;
     const companyFirst = 'Žiga Vukčevič s.p.';
@@ -38,6 +41,8 @@ nunjucks
 
     return companies;
   })
+
+  // Get page information
   .addGlobal('getPageInfo', () => ({
     name: {
       brand: 'send-it',
@@ -50,7 +55,11 @@ nunjucks
       image: 'http://www.send-it.com/images/social/og-image.jpg',
     },
   }))
+
+  // Get current year
   .addGlobal('getCurrentYear', new Date().getFullYear())
+
+  // Get cache busting hash
   .addGlobal('getCacheBustingHash', shortid.generate());
 
 /**
