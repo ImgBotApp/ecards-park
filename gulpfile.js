@@ -7,6 +7,7 @@ const vinylPaths = require('vinyl-paths');
 const cat = require('gulp-cat');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const imagemin = require('gulp-imagemin');
 
 /**
  * Browser-sync taks
@@ -68,6 +69,7 @@ gulp.task('copy-images', () => {
     './app/images/**/*.svg',
     './app/images/**/*.jpg',
   ])
+    .pipe(imagemin())
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest('./public/images'));
 
