@@ -6,8 +6,10 @@ const logger = require('gulp-logger');
 const vinylPaths = require('vinyl-paths');
 const cat = require('gulp-cat');
 const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
+const autoprefixer = require('autoprefixer');
 const imagemin = require('gulp-imagemin');
+const pxtorem = require('postcss-pxtorem');
+const postcss = require('gulp-postcss');
 
 /**
  * Browser-sync taks
@@ -61,10 +63,10 @@ gulp.task('delete-public', () => {
 });
 
 /**
- * Copy images task
+ * Copy and optimize images task
  */
 
-gulp.task('copy-images', () => {
+gulp.task('images', () => {
   const task = gulp.src([
     './app/images/**/*.svg',
     './app/images/**/*.jpg',
@@ -77,7 +79,7 @@ gulp.task('copy-images', () => {
 });
 
 /**
- * Copy CSS files
+ * Copy CSS files task
  */
 
 gulp.task('copy-css', () => {
@@ -88,17 +90,27 @@ gulp.task('copy-css', () => {
   return task;
 });
 
-// Files for SCSS
+/**
+ * Copy, convert, autoprefix and convert px to rem units task
+ */
+
 gulp.task('scss', () => {
+  const processors = [
+    autoprefixer({
+      browsers: 'last 1 version',
+      cascade: false,
+    }),
+    pxtorem({
+      propList: ['*'],
+    }),
+  ];
+
   const task = gulp.src('./app/scss/style.scss')
     .pipe(sass({
       includePaths: ['node_modules/foundation-sites/scss'],
       outputStyle: 'expanded',
     }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false,
-    }))
+    .pipe(postcss(processors))
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest('./public/css'));
 
@@ -106,7 +118,7 @@ gulp.task('scss', () => {
 });
 
 /**
- * Copy font files
+ * Copy font files task
  */
 
 gulp.task('copy-fonts', () => {
@@ -118,7 +130,7 @@ gulp.task('copy-fonts', () => {
 });
 
 /**
- * Copy JavaScript files
+ * Copy JavaScript files task
  */
 
 gulp.task('copy-js', () => {
@@ -133,4 +145,4 @@ gulp.task('copy-js', () => {
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'delete-public', 'copy-images', 'copy-fonts', 'copy-css', 'scss', 'copy-js'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'images', 'copy-fonts', 'copy-css', 'scss', 'copy-js'));
