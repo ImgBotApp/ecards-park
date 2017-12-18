@@ -1,5 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const shortid = require('shortid');
 
 /**
  * Express settings
@@ -49,7 +50,8 @@ nunjucks
       image: 'http://www.send-it.com/images/social/og-image.jpg',
     },
   }))
-  .addGlobal('currentYear', new Date().getFullYear());
+  .addGlobal('getCurrentYear', new Date().getFullYear())
+  .addGlobal('getCacheBustingHash', shortid.generate());
 
 /**
  * Express routes

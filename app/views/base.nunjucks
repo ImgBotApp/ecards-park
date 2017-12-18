@@ -1,4 +1,5 @@
 {% set page = getPageInfo() %}
+{% set cacheBustingHash = getCacheBustingHash %}
 
 <!doctype html>
 <html lang="en">
@@ -15,8 +16,11 @@
   <!-- / OG -->
 
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/line-awesome.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css?v={{ cacheBustingHash }}" />
+  <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css" />
+  <!-- / CSS -->
 </head>
 <body>
   <!-- Facebook -->
@@ -46,7 +50,7 @@
   <!-- / Cookie bar -->
 
   <!-- Scripts -->
-  <script src="../js/facebook.js"></script>
+  <script src="../js/facebook.js?v={{ cacheBustingHash }}"></script>
   {% block scripts %}{% endblock %}
   <!-- / Scripts -->
 </body>

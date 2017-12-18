@@ -10,7 +10,7 @@
     </div>
     <div class="cell small-12 medium-3 large-2 text-center">
       <button type="button" class="button">
-        <i class="la la-lg la-check -left"></i> Continue
+        <i class="fa fa-lg fa-check -left"></i> Continue
       </button>
     </div>
   </div>

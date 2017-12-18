@@ -41,13 +41,13 @@
       <h3>Buttons</h3>
       <button type="button" class="button">Sample button</button>
       <button type="button" class="button">
-        Share button <i class="la la-lg la-facebook -right"></i>
+        Share button <i class="fa fa-lg fa-facebook -right"></i>
       </button>
       <button type="button" class="button">
-        Share button <i class="la la-lg la-twitter -right"></i>
+        Share button <i class="fa fa-lg fa-twitter -right"></i>
       </button>
       <button type="button" class="button">
-        <i class="la la-lg la-check -left"></i> Continue button
+        <i class="fa fa-lg fa-check -left"></i> Continue button
       </button>
       <button type="button" class="button">
         Button with spinner <img class="spinner" src="images/svg/animated/spinner.svg" alt="" />
@@ -68,5 +68,5 @@
 
 {% block scripts %}
 <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
-<script src="../js/validation.js"></script>
+<script src="../js/validation.js?v={{ cacheBustingHash }}"></script>
 {% endblock %}

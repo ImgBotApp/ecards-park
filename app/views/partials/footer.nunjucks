@@ -1,4 +1,4 @@
-{% set currentYear = currentYear %}
+{% set currentYear = getCurrentYear %}
 {% set page = getPageInfo() %}
 
 <div class="grid-container">
@@ -16,8 +16,8 @@
     <div class="cell small-12 medium-3 large-offset-1">
       <h6 class="case-upper">Social networks</h6>
       <ul class="no-bullet">
-        <li><a href="#" title="Facebook page"><i class="la la-facebook"></i> Facebook</a></li>
-        <li><a href="#" title="Twitter page"><i class="la la-twitter"></i> Twitter</a></li>
+        <li><a href="#" title="Facebook page"><i class="fa fa-facebook"></i> Facebook</a></li>
+        <li><a href="#" title="Twitter page"><i class="fa fa-twitter"></i> Twitter</a></li>
       </ul>
     </div>
     <!-- / Social -->
