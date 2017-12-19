@@ -56,11 +56,21 @@
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x grid-margin-y">
-    <div class="cell small-12 large-9">
-      <h1>{{ title }}</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni magnam ab, aliquid nesciunt et animi exercitationem neque veniam at architecto doloribus voluptate eaque aspernatur ipsam quae nobis quisquam voluptatibus aliquam!</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni magnam ab, aliquid nesciunt et animi exercitationem neque veniam at architecto doloribus voluptate eaque aspernatur ipsam quae nobis quisquam voluptatibus aliquam!</p>
+    <!-- Slider -->
+    <div class="cell small-12">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
     </div>
+    <!-- / Slider -->
     <!-- Cards featured -->
     <div class="cell small-12">
       <h2>Featured cards</h2>
