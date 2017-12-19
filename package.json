@@ -10,7 +10,8 @@
   "dependencies": {
     "express": "^4.13.3",
     "nunjucks": "^3.0.1",
-    "shortid": "^2.2.8"
+    "shortid": "^2.2.8",
+    "swiper": "^4.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
