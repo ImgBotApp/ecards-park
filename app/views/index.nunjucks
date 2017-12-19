@@ -2,6 +2,58 @@
 
 {% block content %}
 
+{% set cardsFeatured = [
+  {
+    name: 'name',
+    text: '<p>This is a featured card with an image.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a featured card with an image. Lorem ipsum lorem ipsum lorem ipsum.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a featured card with an image.</p>',
+    alt: 'alt name'
+  }
+] %}
+
+{% set cards = [
+  {
+    name: 'name',
+    text: '<p>This is a simple card with an image.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a simple card with an image. Lorem ipsum lorem ipsum lorem ipsum.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a simple card with an image.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a simple card with an image.</p>',
+    alt: 'alt name'
+  },  {
+    name: 'name',
+    text: '<p>This is a simple card with an image.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a simple card with an image. Lorem ipsum lorem ipsum lorem ipsum.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a simple card with an image.</p>',
+    alt: 'alt name'
+  },{
+    name: 'name',
+    text: '<p>This is a simple card with an image.</p>',
+    alt: 'alt name'
+  }
+] %}
+
 <div class="grid-container">
   <div class="grid-x grid-margin-x grid-margin-y">
     <div class="cell small-12 large-9">
@@ -9,6 +61,46 @@
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni magnam ab, aliquid nesciunt et animi exercitationem neque veniam at architecto doloribus voluptate eaque aspernatur ipsam quae nobis quisquam voluptatibus aliquam!</p>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni magnam ab, aliquid nesciunt et animi exercitationem neque veniam at architecto doloribus voluptate eaque aspernatur ipsam quae nobis quisquam voluptatibus aliquam!</p>
     </div>
+    <!-- Cards featured -->
+    <div class="cell small-12">
+      <h2>Featured cards</h2>
+    </div>
+    {% for cardFeatued in cardsFeatured %}
+    <div class="cell small-12 large-4">
+      <div class="card">
+        <img
+          src="images/jpg/cards/card-thumb-featured-384x288-{{ cardFeatued.name }}.jpg"
+          srcset="images/jpg/cards/card-thumb-featured-384x288-{{ cardFeatued.name }}.jpg 1x,
+                  images/jpg/cards/card-thumb-featured-384x288-{{ cardFeatued.name }}@2x.jpg 2x"
+          alt="{{ cardFeatued.alt }}"
+        />
+        <div class="card-section">
+          {{ cardFeatued.text | safe }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- / Cards featured -->
+    <!-- Cards -->
+    <div class="cell small-12">
+      <h2>Cards</h2>
+    </div>
+    {% for card in cards %}
+    <div class="cell small-12 large-3">
+      <div class="card">
+        <img
+          src="images/jpg/cards/card-thumb-256x192-{{ card.name }}.jpg"
+          srcset="images/jpg/cards/card-thumb-256x192-{{ card.name }}.jpg 1x,
+                  images/jpg/cards/card-thumb-256x192-{{ card.name }}@2x.jpg 2x"
+          alt="{{ card.alt }}"
+        />
+        <div class="card-section">
+          {{ card.text | safe }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- / Cards -->
   </div>
 </div>
 
