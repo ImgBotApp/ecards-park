@@ -44,7 +44,7 @@ gulp.task('nodemon', (callback) => {
 */
 
 /**
- * Show Ascii art
+ * Task for showing ascii art
  */
 
 gulp.task('ascii-art', () => {
@@ -55,7 +55,7 @@ gulp.task('ascii-art', () => {
 });
 
 /**
- * Empty public folder task
+ * Task for emptying public folder
  */
 
 gulp.task('delete-public', () => {
@@ -67,7 +67,7 @@ gulp.task('delete-public', () => {
 });
 
 /**
- * Image files: copy and optimize
+ * Task for image files: copy and optimize
  */
 
 gulp.task('images', () => {
@@ -83,7 +83,7 @@ gulp.task('images', () => {
 });
 
 /**
- * CSS files: copy and minify
+ * Task for CSS files: copy and minify
  */
 
 gulp.task('css', () => {
@@ -96,7 +96,7 @@ gulp.task('css', () => {
 });
 
 /**
- * SCSS files: copy, convert to CSS, autoprefix,
+ * Task for SCSS files: copy, convert to CSS, autoprefix,
  * convert px to rem units and minify
  */
 
@@ -125,7 +125,7 @@ gulp.task('scss', () => {
 });
 
 /**
- * Font files: copy
+ * Task for font files: copy
  */
 
 gulp.task('fonts', () => {
@@ -137,7 +137,7 @@ gulp.task('fonts', () => {
 });
 
 /**
- * JavaScript files: copy, transpile and uglify
+ * Task for JavaScript files: copy, transpile and uglify
  */
 
 gulp.task('js', () => {
