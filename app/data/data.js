@@ -1,4 +1,8 @@
 const data = {
+  companies: {
+    first: 'Žiga Vukčevič s.p.',
+    second: 'Lovro Podobnik s.p.',
+  },
   about: {
     name: {
       brand: 'send-it',

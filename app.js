@@ -31,8 +31,8 @@ nunjucks
   // Get companies information
   .addGlobal('getCompanies', (hasSuffix) => {
     let companies = null;
-    const companyFirst = 'Žiga Vukčevič s.p.';
-    const companySecond = 'Lovro Podobnik s.p.';
+    const companyFirst = data.companies.first;
+    const companySecond = data.companies.second;
 
     if (hasSuffix) {
       companies = `${companyFirst}'s & ${companySecond}'s`;
