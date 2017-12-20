@@ -1,5 +1,4 @@
 {% set currentYear = getCurrentYear %}
-{% set page = getPageInfo() %}
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x grid-margin-y">
@@ -35,7 +34,7 @@
 
     <!-- Copyright -->
     <div class="cell small-12">
-      <small>Copyright © {{ currentYear }} {{ page.name.url }} | All rights reserved.</small>
+      <small>Copyright © {{ currentYear }} {{ about.name.url }} | All rights reserved.</small>
     </div>
     <!-- / Copyright -->
 

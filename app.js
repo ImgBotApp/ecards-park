@@ -43,20 +43,6 @@ nunjucks
     return companies;
   })
 
-  // Get page information
-  .addGlobal('getPageInfo', () => ({
-    name: {
-      brand: 'send-it',
-      url: 'send-it.com',
-    },
-    href: 'http://www.send-it.com',
-    og: {
-      title: 'Send it title',
-      desc: 'Send it desc',
-      image: 'http://www.send-it.com/images/social/og-image.jpg',
-    },
-  }))
-
   // Get current year
   .addGlobal('getCurrentYear', new Date().getFullYear())
 

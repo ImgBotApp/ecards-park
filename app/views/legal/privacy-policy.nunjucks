@@ -3,7 +3,6 @@
 {% block content %}
 
 {% set companiesWithSuffix = getCompanies(true) %}
-{% set page = getPageInfo() %}
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x grid-margin-y">
@@ -12,7 +11,7 @@
       <p>Your privacy is important to us.</p>
       <p>We don’t ask for your personal information unless we truly need it.</p>
       <p>We don’t share your personal information with third-parties, except where required by law. We will only retain personal information for as long as necessary to provide you with a service.</p>
-      <p>It is {{ companiesWithSuffix }} policy to respect your privacy regarding any information we may collect from you across our website, <a href="{{ page.href }}">{{ page.name.url }}</a>. </p>
+      <p>It is {{ companiesWithSuffix }} policy to respect your privacy regarding any information we may collect from you across our website, <a href="{{ about.href }}">{{ about.name.url }}</a>. </p>
       <h3>Personal information</h3>
       <p>We may ask you for personal information, such as your name, email, address, contact details and payment details. We collect only the personal information relevant to providing you with a service, and use your information only to ensure the fulfilment of this service. You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services without this information.</p>
       <h3>Third-party services</h3>

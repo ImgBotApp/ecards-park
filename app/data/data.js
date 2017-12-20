@@ -1,4 +1,16 @@
 const data = {
+  about: {
+    name: {
+      brand: 'send-it',
+      url: 'send-it.com',
+    },
+    href: 'http://www.send-it.com',
+    og: {
+      title: 'Send it title',
+      desc: 'Send it desc',
+      image: 'http://www.send-it.com/images/social/og-image.jpg',
+    },
+  },
   pages: {
     titles: {
       index: 'Home page',

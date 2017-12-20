@@ -1,4 +1,3 @@
-{% set page = getPageInfo() %}
 {% set cacheBustingHash = getCacheBustingHash %}
 
 <!doctype html>
@@ -8,11 +7,11 @@
   <meta name="viewport" content="width=device-width" />
 
   <!-- OG -->
-  <meta property="og:url" content="{{ page.href }}" />
+  <meta property="og:url" content="{{ about.href }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ page.og.title }}" />
-  <meta property="og:description" content="{{ page.og.desc }}" />
-  <meta property="og:image" content="{{ page.og.image }}" />
+  <meta property="og:title" content="{{ about.og.title }}" />
+  <meta property="og:description" content="{{ about.og.desc }}" />
+  <meta property="og:image" content="{{ about.og.image }}" />
   <!-- / OG -->
 
   <title>{{ title }}{{ pages.currentTitle }}</title>

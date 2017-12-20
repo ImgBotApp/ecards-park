@@ -1,7 +1,5 @@
 {% extends 'base.nunjucks' %}
 
-{% set page = getPageInfo() %}
-
 {% block content %}
 
 <div class="grid-container">
@@ -31,7 +29,7 @@
         <button type="button" class="button js-submit-button">
           Subscribe <img class="spinner is-hidden" src="images/svg/animated/spinner.svg" alt="" />
         </button>
-        <p><small>By clicking "Subscribe" I agree to receive news, promotions, information and offers from {{ page.name.brand }}. See our <a href="privacy-policy" title="Privacy policy">Privacy policy</a> and <a href="terms-of-service" title="Terms of service">Terms of service</a>.</small></p>
+        <p><small>By clicking "Subscribe" I agree to receive news, promotions, information and offers from {{ about.name.brand }}. See our <a href="privacy-policy" title="Privacy policy">Privacy policy</a> and <a href="terms-of-service" title="Terms of service">Terms of service</a>.</small></p>
         <p class="is-hidden js-submit-notice">Data has been sent. Thank you.</p>
       </div>
     </div>
