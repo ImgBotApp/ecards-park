@@ -8,6 +8,7 @@ const config = {
       js: './app/js',
     },
     public: {
+      folder: 'public',
       images: './public/images',
       css: './public/css',
       scss: './public/css',

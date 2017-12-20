@@ -59,7 +59,7 @@ gulp.task('ascii-art', () => {
  */
 
 gulp.task('delete-public', () => {
-  const task = gulp.src('public')
+  const task = gulp.src(`${config.paths.public.folder}`)
     .pipe(vinylPaths(del))
     .pipe(logger({ showChange: false }));
 
@@ -67,7 +67,7 @@ gulp.task('delete-public', () => {
 });
 
 /**
- * Copy and optimize images task
+ * Image files: copy and optimize
  */
 
 gulp.task('images', () => {
@@ -83,11 +83,12 @@ gulp.task('images', () => {
 });
 
 /**
- * Copy CSS files task
+ * CSS files: copy and minify
  */
 
-gulp.task('copy-css', () => {
+gulp.task('css', () => {
   const task = gulp.src(`${config.paths.app.css}/**/*.css`)
+    .pipe(cleanCSS({ compatibility: 'ie11' }))
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest(`${config.paths.public.css}`));
 
@@ -95,13 +96,14 @@ gulp.task('copy-css', () => {
 });
 
 /**
- * Copy, convert, autoprefix and convert px to rem units task
+ * SCSS files: copy, convert to CSS, autoprefix,
+ * convert px to rem units and minify
  */
 
 gulp.task('scss', () => {
   const processors = [
     autoprefixer({
-      browsers: 'last 1 version',
+      browsers: 'last 2 versions',
       cascade: false,
     }),
     pxtorem({
@@ -114,8 +116,8 @@ gulp.task('scss', () => {
       includePaths: ['node_modules/foundation-sites/scss'],
       outputStyle: 'expanded',
     }).on('error', sass.logError))
-    .pipe(cleanCSS({ compatibility: 'ie11' }))
     .pipe(postcss(processors))
+    .pipe(cleanCSS({ compatibility: 'ie11' }))
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest(`${config.paths.public.css}`));
 
@@ -123,10 +125,10 @@ gulp.task('scss', () => {
 });
 
 /**
- * Copy font files task
+ * Font files: copy
  */
 
-gulp.task('copy-fonts', () => {
+gulp.task('fonts', () => {
   const task = gulp.src(`${config.paths.app.fonts}/**/*`)
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest(`${config.paths.public.fonts}`));
@@ -135,7 +137,7 @@ gulp.task('copy-fonts', () => {
 });
 
 /**
- * Copy, transpile and uglify JavaScript files task
+ * JavaScript files: copy, transpile and uglify
  */
 
 gulp.task('js', () => {
@@ -154,4 +156,4 @@ gulp.task('js', () => {
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'delete-public', 'images', 'copy-fonts', 'copy-css', 'scss', 'js'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'images', 'fonts', 'css', 'scss', 'js'));
