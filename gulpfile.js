@@ -10,6 +10,8 @@ const autoprefixer = require('autoprefixer');
 const imagemin = require('gulp-imagemin');
 const pxtorem = require('postcss-pxtorem');
 const postcss = require('gulp-postcss');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 
 /**
  * Browser-sync taks
@@ -130,11 +132,15 @@ gulp.task('copy-fonts', () => {
 });
 
 /**
- * Copy JavaScript files task
+ * Copy, transpile and uglify JavaScript files task
  */
 
-gulp.task('copy-js', () => {
+gulp.task('js', () => {
   const task = gulp.src('./app/js/**/*')
+    .pipe(babel({
+      presets: ['es2015'],
+    }))
+    .pipe(uglify())
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest('./public/js'));
 
@@ -145,4 +151,4 @@ gulp.task('copy-js', () => {
  * Default task
  */
 
-gulp.task('default', gulp.series('ascii-art', 'delete-public', 'images', 'copy-fonts', 'copy-css', 'scss', 'copy-js'));
+gulp.task('default', gulp.series('ascii-art', 'delete-public', 'images', 'copy-fonts', 'copy-css', 'scss', 'js'));

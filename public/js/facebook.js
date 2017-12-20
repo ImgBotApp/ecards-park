@@ -1,9 +1,1 @@
-/* eslint-disable */
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=170073533599934';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'))
+"use strict";!function(e,t,n){var s,c=e.getElementsByTagName("script")[0];e.getElementById(n)||((s=e.createElement("script")).id=n,s.src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=170073533599934",c.parentNode.insertBefore(s,c))}(document,0,"facebook-jssdk");
