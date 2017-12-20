@@ -1,3 +1,4 @@
+const config = require('./config.js');
 const gulp = require('gulp');
 const browserSync = require('browser-sync');
 const nodemon = require('gulp-nodemon');
@@ -71,12 +72,12 @@ gulp.task('delete-public', () => {
 
 gulp.task('images', () => {
   const task = gulp.src([
-    './app/images/**/*.svg',
-    './app/images/**/*.jpg',
+    `${config.paths.app.images}/**/*.svg`,
+    `${config.paths.app.images}/**/*.jpg`,
   ])
     .pipe(imagemin())
     .pipe(logger({ showChange: true }))
-    .pipe(gulp.dest('./public/images'));
+    .pipe(gulp.dest(`${config.paths.public.images}`));
 
   return task;
 });
@@ -86,9 +87,9 @@ gulp.task('images', () => {
  */
 
 gulp.task('copy-css', () => {
-  const task = gulp.src('./app/css/**/*.css')
+  const task = gulp.src(`${config.paths.app.css}/**/*.css`)
     .pipe(logger({ showChange: true }))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest(`${config.paths.public.css}`));
 
   return task;
 });
@@ -108,7 +109,7 @@ gulp.task('scss', () => {
     }),
   ];
 
-  const task = gulp.src('./app/scss/style.scss')
+  const task = gulp.src(`${config.paths.app.scss}/style.scss`)
     .pipe(sass({
       includePaths: ['node_modules/foundation-sites/scss'],
       outputStyle: 'expanded',
@@ -116,7 +117,7 @@ gulp.task('scss', () => {
     .pipe(cleanCSS({ compatibility: 'ie11' }))
     .pipe(postcss(processors))
     .pipe(logger({ showChange: true }))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest(`${config.paths.public.css}`));
 
   return task;
 });
@@ -126,9 +127,9 @@ gulp.task('scss', () => {
  */
 
 gulp.task('copy-fonts', () => {
-  const task = gulp.src('./app/fonts/**/*')
+  const task = gulp.src(`${config.paths.app.fonts}/**/*`)
     .pipe(logger({ showChange: true }))
-    .pipe(gulp.dest('./public/fonts'));
+    .pipe(gulp.dest(`${config.paths.public.fonts}`));
 
   return task;
 });
@@ -138,13 +139,13 @@ gulp.task('copy-fonts', () => {
  */
 
 gulp.task('js', () => {
-  const task = gulp.src('./app/js/**/*')
+  const task = gulp.src(`${config.paths.app.js}/**/*`)
     .pipe(babel({
       presets: ['es2015'],
     }))
     .pipe(uglify())
     .pipe(logger({ showChange: true }))
-    .pipe(gulp.dest('./public/js'));
+    .pipe(gulp.dest(`${config.paths.public.js}`));
 
   return task;
 });
