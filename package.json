@@ -27,6 +27,7 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^7.0.0",
     "gulp-cat": "^0.3.3",
+    "gulp-clean-css": "^3.9.0",
     "gulp-imagemin": "^4.0.0",
     "gulp-logger": "0.0.2",
     "gulp-nodemon": "^2.2.1",

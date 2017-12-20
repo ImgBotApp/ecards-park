@@ -12,6 +12,7 @@ const pxtorem = require('postcss-pxtorem');
 const postcss = require('gulp-postcss');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const cleanCSS = require('gulp-clean-css');
 
 /**
  * Browser-sync taks
@@ -112,6 +113,7 @@ gulp.task('scss', () => {
       includePaths: ['node_modules/foundation-sites/scss'],
       outputStyle: 'expanded',
     }).on('error', sass.logError))
+    .pipe(cleanCSS({ compatibility: 'ie11' }))
     .pipe(postcss(processors))
     .pipe(logger({ showChange: true }))
     .pipe(gulp.dest('./public/css'));
