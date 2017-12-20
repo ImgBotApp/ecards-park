@@ -1,3 +1,4 @@
+const data = require('./app/data/data');
 const express = require('express');
 const nunjucks = require('nunjucks');
 const shortid = require('shortid');
@@ -63,37 +64,40 @@ nunjucks
   .addGlobal('getCacheBustingHash', shortid.generate());
 
 /**
+ * Utility functions
+ */
+
+function getPageTitle(key) {
+  return data.pages.titles[key];
+}
+
+/**
  * Express routes
  */
 
 app.get('/', (req, res) => {
-  res.render('index.nunjucks', {
-    title: 'Home page',
-  });
+  data.pages.currentTitle = getPageTitle('index');
+  res.render('index.nunjucks', data);
 });
 
 app.get('/demo', (req, res) => {
-  res.render('demo.nunjucks', {
-    title: 'Demo page',
-  });
+  data.pages.currentTitle = getPageTitle('demo');
+  res.render('demo.nunjucks', data);
 });
 
 app.get('/terms-of-service', (req, res) => {
-  res.render('legal/terms-of-service.nunjucks', {
-    title: 'Terms of service',
-  });
+  data.pages.currentTitle = getPageTitle('termsOfService');
+  res.render('legal/terms-of-service.nunjucks', data);
 });
 
 app.get('/privacy-policy', (req, res) => {
-  res.render('legal/privacy-policy.nunjucks', {
-    title: 'Privacy policy',
-  });
+  data.pages.currentTitle = getPageTitle('privacyPolicy');
+  res.render('legal/privacy-policy.nunjucks', data);
 });
 
 app.get('/cookie-policy', (req, res) => {
-  res.render('legal/cookie-policy.nunjucks', {
-    title: 'Cookie policy',
-  });
+  data.pages.currentTitle = getPageTitle('cookiePolicy');
+  res.render('legal/cookie-policy.nunjucks', data);
 });
 
 /**

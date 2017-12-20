@@ -6,59 +6,6 @@
 
 {% block content %}
 
-{% set cards = {
-  featured: [
-    {
-      name: 'name',
-      text: '<p>This is a featured card with an image.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a featured card with an image. Lorem ipsum lorem ipsum lorem ipsum.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a featured card with an image.</p>',
-      alt: 'alt name'
-    }
-  ],
-  simple: [
-    {
-      name: 'name',
-      text: '<p>This is a simple card with an image.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a simple card with an image. Lorem ipsum lorem ipsum lorem ipsum.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a simple card with an image.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a simple card with an image.</p>',
-      alt: 'alt name'
-    },  {
-      name: 'name',
-      text: '<p>This is a simple card with an image.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a simple card with an image. Lorem ipsum lorem ipsum lorem ipsum.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a simple card with an image.</p>',
-      alt: 'alt name'
-    },{
-      name: 'name',
-      text: '<p>This is a simple card with an image.</p>',
-      alt: 'alt name'
-    }
-  ]
-}%}
-
 <div class="grid-container">
   <div class="grid-x grid-margin-x grid-margin-y">
     <!-- Slider -->
