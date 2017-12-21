@@ -5,14 +5,14 @@ const data = {
   },
   about: {
     name: {
-      brand: 'send-it',
-      url: 'send-it.com',
+      brand: 'ecards-park',
+      url: 'ecardspark.com',
     },
-    href: 'http://www.send-it.com',
+    href: 'http://www.ecardspark.com',
     og: {
-      title: 'Send it title',
-      desc: 'Send it desc',
-      image: 'http://www.send-it.com/images/social/og-image.jpg',
+      title: 'Ecards park',
+      desc: 'Best free ecards',
+      image: 'http://www.ecardspark.com/images/social/og-image.jpg',
     },
   },
   pages: {
