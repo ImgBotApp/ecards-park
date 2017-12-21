@@ -23,7 +23,8 @@
     <!-- Facebook -->
     <div class="cell small-12 medium-3">
       <div class="fb-like"
-          data-href="https://www.facebook.com/Digitalna-ladja-112957788789031/" data-layout="button_count"
+          data-href="{{ about.facebookPage }}"
+          data-layout="button_count"
           data-action="like"
           data-size="large"
           data-show-faces="false"

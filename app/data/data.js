@@ -9,6 +9,7 @@ const data = {
       url: 'ecardspark.com',
     },
     href: 'http://www.ecardspark.com',
+    facebookPage: 'https://www.facebook.com/ecardsPark/',
     og: {
       title: 'Ecards park',
       desc: 'Best free ecards',
