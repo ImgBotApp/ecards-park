@@ -14,7 +14,7 @@
   <meta property="og:image" content="{{ about.og.image }}" />
   <!-- / OG -->
 
-  <title>{{ title }}{{ pages.currentTitle }}</title>
+  <title>{{ pages.currentTitle }}</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css?v={{ cacheBustingHash }}" />
