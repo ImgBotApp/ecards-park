@@ -26,7 +26,7 @@ const data = {
     },
     currentTitle: null,
   },
-  cards: {
+  ecards: {
     featured: [
       {
         name: 'name',

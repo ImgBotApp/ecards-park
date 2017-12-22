@@ -1,0 +1,17 @@
+{% macro ecardsSimple(ecards) %}
+  {% for ecard in ecards %}
+  <div class="cell small-12 medium-4 large-3">
+    <div class="card">
+      <img
+        src="images/ecards/ecard-thumb-768x576-{{ ecard.name }}.jpg"
+        srcset="images/ecards/ecard-thumb-768x576-{{ ecard.name }}.jpg 1x,
+                images/ecards/ecard-thumb-768x576-{{ ecard.name }}@2x.jpg 2x"
+        alt="{{ ecard.alt }}"
+      />
+      <div class="card-section">
+        {{ ecard.text | safe }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endmacro %}

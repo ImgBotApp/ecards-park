@@ -1,8 +1,8 @@
 {% extends 'base.nunjucks' %}
 
 {# Imports #}
-{% from "components/cards-simple.nunjucks" import cardsSimple as cardsSimple %}
-{% from "components/cards-featured.nunjucks" import cardsFeatured as cardsFeatured %}
+{% from "components/ecards-simple.nunjucks" import ecardsSimple as ecardsSimple %}
+{% from "components/ecards-featured.nunjucks" import ecardsFeatured as ecardsFeatured %}
 
 {% block content %}
 
@@ -23,18 +23,18 @@
       </div>
     </div>
     <!-- / Slider -->
-    <!-- Cards featured -->
+    <!-- Ecards featured -->
     <div class="cell small-12">
-      <h2>Featured cards</h2>
+      <h2>Featured ecards</h2>
     </div>
-    {{ cardsFeatured(cards.featured) }}
-    <!-- / Cards featured -->
-    <!-- Cards simple -->
+    {{ ecardsFeatured(ecards.featured) }}
+    <!-- / Ecards featured -->
+    <!-- Ecards simple -->
     <div class="cell small-12">
-      <h2>Cards</h2>
+      <h2>Ecards</h2>
     </div>
-    {{ cardsSimple(cards.simple) }}
-    <!-- / Cards simple -->
+    {{ ecardsSimple(ecards.simple) }}
+    <!-- / Ecards simple -->
   </div>
 </div>
 
